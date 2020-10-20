@@ -11,6 +11,490 @@
 <html>\
 <body>\
 <h1>Hello World</h1>\
+  
+  
+  {
+  "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}},
+  "layer": [
+    {
+      "data": {"name": "data-cc44a1363db4ccb620f549f611e70d92"},
+      "mark": {"type": "rect", "color": "#F2F2F2"},
+      "encoding": {
+        "opacity": {
+          "condition": {"value": 1, "selection": "selector002"},
+          "value": 0.1
+        },
+        "x": {"type": "temporal", "field": "start"},
+        "x2": {"field": "end"}
+      },
+      "height": 400,
+      "selection": {
+        "selector002": {
+          "type": "single",
+          "fields": ["event"],
+          "bind": {
+            "input": "radio",
+            "options": [
+              "Keine Maßnahme ",
+              "Gastgewerbe geschlossen ",
+              "Gesetz zum Schutz der Bevölkerung ",
+              "Krankenhausentlastungsgesetz ",
+              "Konjukturpaket Gesundheit ",
+              "2. Gesetz zum Schutz der Gesundheit ",
+              "Pauschale Reisewarnung "
+            ],
+            "name": "Wähle eine staatliche Maßnahme: "
+          }
+        }
+      },
+      "width": 800
+    },
+    {
+      "data": {"name": "data-f7d67dfc9336aeae773681b907dd0226"},
+      "mark": "line",
+      "encoding": {
+        "color": {
+          "type": "nominal",
+          "field": "variable",
+          "legend": {"title": "Branchen in Deutschland"}
+        },
+        "opacity": {
+          "condition": {"value": 1, "selection": "selector001"},
+          "value": 0.1
+        },
+        "tooltip": [
+          {"type": "temporal", "field": "Datum"},
+          {"type": "nominal", "field": "variable"},
+          {"type": "quantitative", "field": "value"}
+        ],
+        "x": {"type": "temporal", "axis": {"title": "Monat"}, "field": "Datum"},
+        "y": {
+          "type": "quantitative",
+          "axis": {
+            "format": "%",
+            "title": "Prozentualer Zuwachs der Arbeitslosigkeit"
+          },
+          "field": "value"
+        }
+      },
+      "height": 400,
+      "selection": {
+        "selector003": {
+          "type": "interval",
+          "bind": "scales",
+          "encodings": ["x", "y"]
+        },
+        "selector001": {
+          "type": "multi",
+          "fields": ["variable"],
+          "bind": "legend"
+        }
+      },
+      "title": "Prozentualer Zuwachs der Arbeitslosigkeit pro Branche inklusive Maßnahmen",
+      "width": 800
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
+  "datasets": {
+    "data-cc44a1363db4ccb620f549f611e70d92": [
+      {"start": "", "end": "", "event": "Keine Maßnahme "},
+      {
+        "start": "2020-03-22",
+        "end": "2020-04-06",
+        "event": "Gastgewerbe geschlossen "
+      },
+      {
+        "start": "2020-03-27",
+        "end": "2020-05-14",
+        "event": "Gesetz zum Schutz der Bevölkerung "
+      },
+      {
+        "start": "2020-03-25",
+        "end": "2020-03-26",
+        "event": "Krankenhausentlastungsgesetz "
+      },
+      {
+        "start": "2020-06-04",
+        "end": "2020-07-01",
+        "event": "Konjukturpaket Gesundheit "
+      },
+      {
+        "start": "2020-05-14",
+        "end": "2020-07-01",
+        "event": "2. Gesetz zum Schutz der Gesundheit "
+      },
+      {
+        "start": "2020-03-17",
+        "end": "2020-07-01",
+        "event": "Pauschale Reisewarnung "
+      }
+    ],
+    "data-f7d67dfc9336aeae773681b907dd0226": [
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.008081158148716823
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.0058520710059171595
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.005812431604289779
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.008295284266196563
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.006944162436548223
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.005591890700749229
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Handel%",
+        "value": 0.005729997795900375
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.0003178534571723426
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.0014293085655314758
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.001456140350877193
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.0026525336091003104
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.0018095238095238095
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.0015522233712512927
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Fianzen und Versicherungen%",
+        "value": 0.0025196687370600416
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.02073579801623084
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.013338129496402878
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.0011910946196660483
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.034688910696761534
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.00019781312127236582
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.01275395256916996
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Gastgewerbe%",
+        "value": 0.0117426326129666
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.00394970925663995
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.002684235294117647
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.0027932707355242566
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.004192380056444026
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.0034454203262233377
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.0027708072590738424
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Bildungs-/Gesundheits-/Sozialwesen%",
+        "value": 0.003881361223852638
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.007732647814910025
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.004556030795551754
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.0004782608695652174
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.007044444444444444
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.005585261353898886
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.00507600341588386
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "ITK%",
+        "value": 0.005451914893617021
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.0028770535241123478
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.0013759915388683237
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.0012771911298838437
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.0017803590285110876
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.0013972602739726028
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.0012229232386961094
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Öffentliche Verwaltung%",
+        "value": 0.00019464847848898217
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.014706420519522954
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.010234938775510204
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.01007499590633699
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.014810379241516966
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.0120536013400335
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.004103413654618474
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Sonstige Dienstleistungen%",
+        "value": 0.0038531035636606994
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.009539473684210526
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.004135005973715651
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.003111244019138756
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.003673913043478261
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.0032249093107617898
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.0029178743961352656
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Umwelt u. Energie%",
+        "value": 0.003431159420289855
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.009204113746206586
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.00043964450444369444
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.004206958675824795
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.0052510190217391305
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.00044704279713928934
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.003712840909090909
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "Verarbeitung%",
+        "value": 0.00417750939956705
+      },
+      {
+        "Datum": "2020-01-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.010532870122928915
+      },
+      {
+        "Datum": "2020-02-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.007536324786324786
+      },
+      {
+        "Datum": "2020-03-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.007475681453768038
+      },
+      {
+        "Datum": "2020-04-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.010567421790722762
+      },
+      {
+        "Datum": "2020-05-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.008400107991360692
+      },
+      {
+        "Datum": "2020-06-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.006444264943457189
+      },
+      {
+        "Datum": "2020-07-01T00:00:00",
+        "variable": "VerkehrLagerei%",
+        "value": 0.006713132400430571
+      }
+    ]
+  }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 <p>I'm hosted with GitHub Pages.</p>\
 </body>\
 </html>}
